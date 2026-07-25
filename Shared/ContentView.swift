@@ -27,7 +27,7 @@ struct ContentView: View {
                     Text("Sign Up")
                         .font(Font.largeTitle.bold())
                         .foregroundColor(.white)
-                    Text("Access to 120+ horus of courses,tutorials, and livestrems")
+                    Text("Access 120+ hours of courses, tutorials, and live streams")
                         .font(.subheadline)
                         .foregroundColor(Color.white.opacity(0.7))
                    //Email
@@ -98,7 +98,7 @@ struct ContentView: View {
                             Text("Already have an account?")
                                 .font(.footnote)
                                 .foregroundColor(Color.white.opacity(0.7))
-                            GardientText(text: "Sign in")
+                            GradientText(text: "Sign in")
                                 .font(Font.footnote.bold())
                                 
                         }

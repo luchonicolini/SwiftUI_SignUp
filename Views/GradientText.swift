@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GardientText: View {
+struct GradientText: View {
     var text: String = "Text here"
   
     var body: some View {

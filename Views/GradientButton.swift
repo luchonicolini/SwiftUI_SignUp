@@ -31,7 +31,7 @@ struct GradientButton: View {
                                 .frame(maxWidth: geometry.size.width - 16)
                                 .blur(radius: 8.0)
                         )
-                    GardientText(text: "Sign Up")
+                    GradientText(text: "Sign Up")
                         .font(.headline)
                         .frame(width: geometry.size.width - 16)
                         .frame(height: 50)

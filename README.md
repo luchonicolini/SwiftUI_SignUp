@@ -1,83 +1,77 @@
-<div align="center">
-
 # SwiftUI Sign Up
 
-**Prototipo de una pantalla de registro para iOS, desarrollado con SwiftUI y enfocado en una experiencia visual moderna.**
+> **English:** An iOS sign-up UI prototype exploring reusable SwiftUI components, custom focus feedback, gradients and translucent surfaces. It demonstrates interface composition, not a working authentication backend.
 
-![Swift](https://img.shields.io/badge/Swift-5.0-F05138?logo=swift&logoColor=white)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-iOS-0D96F6?logo=swift&logoColor=white)
-![iOS](https://img.shields.io/badge/iOS-15.4%2B-000000?logo=apple&logoColor=white)
-![Estado](https://img.shields.io/badge/estado-prototipo-8B5CF6)
+Este prototipo explora cómo construir un formulario de registro con una identidad visual propia y componentes reutilizables.
+Permite revisar la composición, el foco de los campos y los estados visuales de email y contraseña.
 
-</div>
+**Alcance:** demostración de UI. Los botones no crean cuentas ni inician sesión.
 
-## Descripción
+## Capturas
 
-SwiftUI Sign Up es una demostración de interfaz para una pantalla de creación de cuenta. El diseño combina fondos ilustrados, transparencias, desenfoque, campos personalizados y gradientes para construir una experiencia atractiva y reutilizable.
+<img src="https://user-images.githubusercontent.com/20882895/192369100-2d6e107b-7117-4ce6-8184-ac0c93c245d6.png" alt="Formulario de registro con superficie translúcida" width="300">
+<img src="https://user-images.githubusercontent.com/20882895/192369111-eb96af37-c419-47b3-a152-2b54aaf88292.png" alt="Estado visual del formulario de registro" width="300">
 
-> Este proyecto demuestra la interfaz y sus interacciones visuales. No incluye un servicio de autenticación ni conexión con un backend.
+## Funcionalidades
 
-## Vista previa
+- Campos de email y contraseña con estado local.
+- Indicadores visuales del campo en edición.
+- Botón y texto con gradientes, separados en componentes.
+- Superficies translúcidas con un adaptador de desenfoque UIKit.
+- Recursos gráficos y colores centralizados en el catálogo de assets.
 
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/20882895/192369100-2d6e107b-7117-4ce6-8184-ac0c93c245d6.png" alt="Pantalla de registro" width="300">
-  &nbsp;&nbsp;
-  <img src="https://user-images.githubusercontent.com/20882895/192369111-eb96af37-c419-47b3-a152-2b54aaf88292.png" alt="Interacción con el formulario" width="300">
-</div>
+## Stack y estructura
 
-## Características
+| Área | Implementación |
+| --- | --- |
+| Lenguaje y UI | Swift 5 y SwiftUI |
+| Destino iOS | iOS 15.4 o posterior, según el proyecto |
+| Estado | `@State` en la vista; no hay una capa MVVM de autenticación |
+| Interoperabilidad | UIKit en helpers de interfaz |
+| Persistencia | Infraestructura Core Data de la plantilla; no guarda registros de usuarios |
 
-- Formulario de registro con correo electrónico y contraseña.
-- Campos personalizados con indicadores visuales de foco.
-- Botón y textos con gradientes.
-- Efecto de cristal mediante desenfoque y transparencias.
-- Diseño adaptable construido con componentes de SwiftUI.
-- Recursos visuales organizados en un catálogo de assets.
+| Ubicación | Responsabilidad |
+| --- | --- |
+| `Shared/ContentView.swift` | Composición del formulario |
+| `Views/` | GradientButton, GradientText y TextfieldIcon |
+| `Helpers/` | Desenfoque y selector de imágenes |
+| `Shared/Assets.xcassets/` | Imágenes y colores |
+| `Shared/Persistence.swift` | Infraestructura de persistencia de la plantilla |
 
-## Tecnologías
+## Cómo ejecutarlo
 
-- **Swift 5**
-- **SwiftUI**
-- **UIKit** para el efecto visual y el selector de imágenes
-- **Core Data**
-- **Xcode**
-
-## Estructura
-
-```text
-Presentacion/
-├── Shared/     # Aplicación, vista principal, persistencia y recursos
-├── Views/      # Componentes visuales reutilizables
-├── Helpers/    # Desenfoque y selector de imágenes
-├── macOS/      # Configuración del target de macOS
-└── Presentacion.xcodeproj
-```
-
-## Requisitos
-
-- macOS con Xcode
-- iOS 15.4 o posterior
-- Swift 5.0 o posterior
-
-## Instalación
-
-1. Cloná el repositorio:
+1. Instalá Xcode en macOS y un simulador compatible.
+2. Cloná y abrí el proyecto desde la raíz:
 
    ```bash
-   git clone https://github.com/luchonicolini/Presentacion.git
+   git clone https://github.com/luchonicolini/SwiftUI_SignUp.git
+   cd SwiftUI_SignUp
+   open Presentacion.xcodeproj
    ```
 
-2. Abrí el proyecto:
+3. Seleccioná el target/esquema de **Presentacion (iOS)** y un simulador con iOS 15.4 o posterior.
+4. Compilá y ejecutá con **⌘R**.
+5. Para un dispositivo físico, configurá tu propio equipo de firma.
 
-   ```bash
-   open Presentacion/Presentacion.xcodeproj
-   ```
+El proyecto incluye configuración macOS heredada. El alcance documentado aquí es el prototipo iOS.
 
-3. Seleccioná el target de iOS y un simulador compatible.
-4. Ejecutá la aplicación con `⌘R`.
+## Verificación
+
+Revisá manualmente entrada de texto, foco, teclado y comportamiento en distintos tamaños de pantalla.
+El repositorio no tiene suite automatizada ni workflow de CI.
+Las capturas conservadas sirven como referencia visual; no certifican compatibilidad con versiones nuevas de iOS.
+
+## Próximos pasos
+
+- Validar contraste, tamaños de texto, VoiceOver y navegación por teclado.
+- Agregar validaciones y estados de carga y error si se convierte en un flujo real.
+- Incorporar pruebas de interacción antes de integrar un proveedor de autenticación.
+- Documentar el origen de los recursos y las referencias visuales.
+
+## Pendientes de presentación
+
+- [COMPLETAR: referencias del ejercicio y atribución o licencia de los recursos visuales]
 
 ## Autor
 
-Desarrollado por [Luciano Nicolini](https://github.com/luchonicolini).
-
-Si te resulta útil como referencia de diseño en SwiftUI, podés dejar una ⭐ en el repositorio.
+[Luciano Nicolini](https://github.com/luchonicolini) · iOS Developer (Swift, SwiftUI).
